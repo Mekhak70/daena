@@ -59,3 +59,18 @@
     justify-content: center;
     gap: 5px;
 }
+
+@media screen and (max-width: 450px) {
+    .subtext{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+    .subtext div{
+        display: none;
+    }
+    
+}
