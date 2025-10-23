@@ -2,9 +2,23 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-.container {
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #002169;
+    overflow: hidden; /* հանում ա scroll-ը */
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+  }
+  
+  .container {
     width: 100%;
     height: 100vh;
     background-color: #002169;
@@ -13,64 +27,65 @@
     justify-content: center; /* լոգոն կենտրոնում վերտիկալ */
     align-items: center;     /* լոգոն կենտրոնում հորիզոնտալ */
     position: relative;      /* տեքստի absolute դիրքի համար */
-}
-
-.box {
+    overflow: hidden;        /* հեռացնում ա ավելորդ scroll-ը */
+  }
+  
+  .box {
     width: 30%;
     aspect-ratio: 22 / 9;
     background-image: url('./images/cover.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
- 
-}
-.text {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FFF;
+  }
+  
+  .text {
     position: absolute;
-    bottom: 20px; 
-    text-align: center;
+    bottom: 20px;
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 25px;
-    font-family: 'Lato', sans-serif;
+    color: #fff;
+    text-align: center;
     font-weight: 300;
-
-    span{
-        font-size: 27px;
-        font-family: 'Lato', sans-serif;
-        font-weight: 700; 
-    }  
-    
-    a {
-        text-decoration: none;
-        color: #FFF;
-    }
-}
-
-.subtext{
-    width: 100%;
+  }
+  
+  .text span {
+    font-size: 27px;
+    font-weight: 700;
+  }
+  
+  .text a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .subtext {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
-}
-
-@media screen and (max-width: 450px) {
-    .subtext{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
+  }
+  
+  @media screen and (max-width: 450px) {
+    .box {
+      width: 80%; /* ավելի մեծ լոգո՝ փոքր էկրանների համար */
     }
-    .subtext div{
-        display: none;
+  
+    .subtext {
+      flex-direction: column;
+      gap: 5px;
     }
-    
-}
+  
+    .subtext div {
+      display: none;
+    }
+  
+    html, body, .container {
+      height: 100dvh; /* օգտագործում ա device viewport height՝ հեռախոսների համար */
+      overflow: hidden;
+    }
+  }
+  
